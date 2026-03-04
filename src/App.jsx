@@ -98,7 +98,7 @@ function App() {
     <div className="App">
       <main>
         {/* --- Hero Section --- */}
-        <section className="hero-section">
+        <section id="hero" className="hero-section">
           {/* Premium Logo & Brand */}
           <div className="hero-brand">
             <img src={logo} alt="Golden Castle Roofing Logo" className="hero-logo" />
@@ -184,80 +184,161 @@ function App() {
         </section>
 
         {/* --- Services Section --- */}
-        <section className="section">
+        <section id="services" className="section services-section">
           <h2 className="section-heading heading-underline">Our Services</h2>
+          <p className="section-subtitle">Expert roofing and construction solutions tailored to your needs</p>
+          
+          <div className="services-grid">
+            {/* Service 1: Spandrel Roofing */}
+            <div className="service-grid-card">
+              <div className="service-image-wrapper">
+                <img src="/images/service-spandrel.png" alt="Spandrel Roofing" className="service-image" />
+                <div className="service-overlay"></div>
+              </div>
+              <div className="service-content">
+                <h3>Spandrel Roofing</h3>
+                <p>Premium spandrel roofing systems designed for modern architectural aesthetics and superior weather protection for residential and commercial buildings.</p>
+              </div>
+            </div>
 
-          <div className="service-card">
-            <h3>Roof Installation</h3>
-            <p>We provide expert installation of top-quality roofing systems, ensuring durability and weather resistance.</p>
-            <button 
-              onClick={() => toggleService('installation')} 
-              className="read-more"
-            >
-              {expandedService === 'installation' ? 'Show Less ↑' : 'Read More →'}
-            </button>
-            
-            <div className={`service-details ${expandedService === 'installation' ? 'expanded' : ''}`}>
-              <div className="service-details-content">
-                <h4>What We Offer:</h4>
-                <ul className="service-list">
-                  <li><strong>Premium Materials:</strong> We use only high-grade roofing materials from trusted manufacturers, ensuring longevity and performance.</li>
-                  <li><strong>Expert Installation:</strong> Our certified roofing specialists follow industry best practices and safety standards for every project.</li>
-                  <li><strong>Custom Solutions:</strong> From traditional shingles to modern metal roofing, we tailor our approach to your specific needs and budget.</li>
-                  <li><strong>Comprehensive Warranty:</strong> All installations come with manufacturer warranties and our workmanship guarantee.</li>
-                  <li><strong>Energy Efficiency:</strong> Options for reflective and insulated roofing systems to reduce cooling costs and improve comfort.</li>
-                </ul>
-                <h4>Our Process:</h4>
-                <ol className="service-process">
-                  <li>Free on-site inspection and consultation</li>
-                  <li>Detailed quote with material options and timeline</li>
-                  <li>Professional removal of old roofing (if applicable)</li>
-                  <li>Quality installation with attention to detail</li>
-                  <li>Thorough cleanup and final walkthrough</li>
-                </ol>
-                <p className="service-note">Average project completion: 7-15 days depending on size and complexity.</p>
+            {/* Service 2: Asphalt Roofing */}
+            <div className="service-grid-card">
+              <div className="service-image-wrapper">
+                <img src="/images/service-asphalt.png" alt="Asphalt Roofing" className="service-image" />
+                <div className="service-overlay"></div>
+              </div>
+              <div className="service-content">
+                <h3>Asphalt Roofing</h3>
+                <p>Durable and cost-effective asphalt shingle installations offering excellent protection against harsh weather conditions with a variety of style options.</p>
+              </div>
+            </div>
+
+            {/* Service 3: Tile Roofing */}
+            <div className="service-grid-card">
+              <div className="service-image-wrapper">
+                <img src="/images/service-tile.png" alt="Tile Roofing" className="service-image" />
+                <div className="service-overlay"></div>
+              </div>
+              <div className="service-content">
+                <h3>Tile Roofing</h3>
+                <p>Classic and elegant tile roofing solutions providing exceptional longevity, energy efficiency, and timeless curb appeal for your property.</p>
+              </div>
+            </div>
+
+            {/* Service 4: Trusses */}
+            <div className="service-grid-card">
+              <div className="service-image-wrapper">
+                <img src="/images/service-trusses.png" alt="Trusses Installation" className="service-image" />
+                <div className="service-overlay"></div>
+              </div>
+              <div className="service-content">
+                <h3>Trusses</h3>
+                <p>Custom-designed and precision-engineered roof trusses ensuring structural integrity and optimal load distribution for safe, long-lasting construction.</p>
+              </div>
+            </div>
+
+            {/* Service 5: Ribtype Roofing */}
+            <div className="service-grid-card">
+              <div className="service-image-wrapper">
+                <img src="/images/service-ribtype.png" alt="Ribtype Roofing" className="service-image" />
+                <div className="service-overlay"></div>
+              </div>
+              <div className="service-content">
+                <h3>Ribtype Roofing</h3>
+                <p>Industrial-grade ribbed metal roofing perfect for warehouses, factories, and commercial spaces requiring durability and weather resistance.</p>
+              </div>
+            </div>
+
+            {/* Service 6: PVC Panel */}
+            <div className="service-grid-card">
+              <div className="service-image-wrapper">
+                <img src="/images/service-pvc.jpg" alt="PVC Wall Panel" className="service-image" />
+                <div className="service-overlay"></div>
+              </div>
+              <div className="service-content">
+                <h3>PVC Wall Panels</h3>
+                <p>Lightweight and versatile PVC wall panels offering excellent insulation, moisture resistance, and low maintenance for interior and exterior wall applications.</p>
+              </div>
+            </div>
+
+            {/* Service 7: Metal Cladding */}
+            <div className="service-grid-card">
+              <div className="service-image-wrapper">
+                <img src="/images/service-cladding.png" alt="Metal Cladding" className="service-image" />
+                <div className="service-overlay"></div>
+              </div>
+              <div className="service-content">
+                <h3>Metal Cladding</h3>
+                <p>Professional metal cladding installation providing superior protection, modern aesthetics, and enhanced thermal performance for your building exterior.</p>
+              </div>
+            </div>
+
+            {/* Service 8: Ceiling */}
+            <div className="service-grid-card">
+              <div className="service-image-wrapper">
+                <img src="/images/service-ceiling.jfif" alt="Ceiling Installation" className="service-image" />
+                <div className="service-overlay"></div>
+              </div>
+              <div className="service-content">
+                <h3>Ceiling</h3>
+                <p>Expert ceiling installation and finishing services transforming interior spaces with quality materials and precision craftsmanship for lasting beauty.</p>
+              </div>
+            </div>
+
+            {/* Service 9: Painting */}
+            <div className="service-grid-card">
+              <div className="service-image-wrapper">
+                <img src="/images/service-painting.jpeg" alt="Professional Painting" className="service-image" />
+                <div className="service-overlay"></div>
+              </div>
+              <div className="service-content">
+                <h3>Paint Jobs</h3>
+                <p>Professional interior and exterior painting services using premium-quality paints to protect and beautify your residential or commercial property.</p>
+              </div>
+            </div>
+
+            {/* Service 10: House Design */}
+            <div className="service-grid-card">
+              <div className="service-image-wrapper">
+                <img src="/images/service-design.jpg" alt="Architectural Design" className="service-image" />
+                <div className="service-overlay"></div>
+              </div>
+              <div className="service-content">
+                <h3>Architectural Design</h3>
+                <p>Comprehensive architectural design services bringing your vision to life with functional layouts, modern aesthetics, and sustainable building practices.</p>
+              </div>
+            </div>
+
+            {/* Service 11: Sliding Windows & Doors */}
+            <div className="service-grid-card">
+              <div className="service-image-wrapper">
+                <img src="/images/service-windows.png" alt="Sliding Windows & Doors" className="service-image" />
+                <div className="service-overlay"></div>
+              </div>
+              <div className="service-content">
+                <h3>Sliding Windows & Doors</h3>
+                <p>Premium sliding window and door installations enhancing natural light, ventilation, and accessibility while maintaining energy efficiency and security.</p>
+              </div>
+            </div>
+
+            {/* Service 12: Site Inspection */}
+            <div className="service-grid-card">
+              <div className="service-image-wrapper">
+                <img src="/images/service-inspect.jpg" alt="Site Inspection" className="service-image" />
+                <div className="service-overlay"></div>
+              </div>
+              <div className="service-content">
+                <h3>Site Inspection</h3>
+                <p>Comprehensive on-site evaluations and assessments to ensure structural integrity, identify potential issues, and provide accurate project estimates and recommendations.</p>
               </div>
             </div>
           </div>
 
-          <div className="service-card">
-            <h3>Roof Repair</h3>
-            <p>Fix leaks, damaged shingles, and wear and tear immediately to prevent further damage.</p>
-            <button 
-              onClick={() => toggleService('repair')} 
-              className="read-more"
-            >
-              {expandedService === 'repair' ? 'Show Less ↑' : 'Read More →'}
-            </button>
-            
-            <div className={`service-details ${expandedService === 'repair' ? 'expanded' : ''}`}>
-              <div className="service-details-content">
-                <h4>Common Repairs We Handle:</h4>
-                <ul className="service-list">
-                  <li><strong>Leak Detection & Repair:</strong> Advanced diagnostic techniques to identify and fix all sources of water intrusion.</li>
-                  <li><strong>Shingle Replacement:</strong> Replace damaged, missing, or wind-blown shingles with color-matched materials.</li>
-                  <li><strong>Flashing Repair:</strong> Fix or replace damaged flashing around chimneys, vents, and skylights to prevent leaks.</li>
-                  <li><strong>Structural Repairs:</strong> Address underlying deck damage, rot, or structural issues before they worsen.</li>
-                  <li><strong>Gutter & Drainage:</strong> Repair or realign gutters and downspouts for proper water management.</li>
-                </ul>
-                <h4>Why Choose Us for Repairs:</h4>
-                <ul className="service-list">
-                  <li>Fast response time - usually within 24-48 hours</li>
-                  <li>Transparent pricing with no hidden fees</li>
-                  <li>Quality repairs that match your existing roof</li>
-                  <li>Preventive maintenance recommendations</li>
-                  <li>Documentation with before/after photos</li>
-                </ul>
-                <p className="service-note">Most repairs completed in 2-3 days. Emergency services available.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* The Featured "Emergency" Card */}
+          {/* Emergency Call-to-Action */}
           <div className="service-card emergency">
-            <h3>Emergency Leak Repair</h3>
-            <p>Need immediate assistance? Our team is ready to handle urgent repairs to protect your home safely.</p>
-            <button className="btn-red">Call Now</button>
+            <h3>Emergency Roofing Services</h3>
+            <p>Need immediate assistance? Our team is ready 24/7 to handle urgent repairs and protect your property from further damage.</p>
+            <button className="btn-red" onClick={() => window.location.href = 'tel:09177052591'}>Call Now: 09177052591</button>
           </div>
         </section>
 
@@ -304,7 +385,7 @@ function App() {
           <div className="team-grid">
             <div className="team-card">
               <div className="team-image-wrapper">
-                <img src="/images/team/foreman.jpg" alt="Architect" className="team-image" />
+                <img src="/images/male.jpg" alt="Architect" className="team-image" />
               </div>
               <div className="team-info">
                 <h3 className="team-name">Ar. Jessie Optina</h3>
@@ -314,17 +395,17 @@ function App() {
 
             <div className="team-card">
               <div className="team-image-wrapper">
-                <img src="/images/team/estimator.jpg" alt="Secretary" className="team-image" />
+                <img src="/images/female.jpg" alt="Secretary" className="team-image" />
               </div>
               <div className="team-info">
-                <h3 className="team-name">Joan Optina</h3>
+                <h3 className="team-name">Joan Optina Omac</h3>
                 <p className="team-position">Secretary</p>
               </div>
             </div>
 
             <div className="team-card">
               <div className="team-image-wrapper">
-                <img src="/images/team/specialist.jpg" alt="Estimator" className="team-image" />
+                <img src="/images/male.jpg" alt="Estimator" className="team-image" />
               </div>
               <div className="team-info">
                 <h3 className="team-name">Aldrin Amantiad</h3>
@@ -344,7 +425,6 @@ function App() {
             <div className="project-card">
               <div className="project-image-wrapper">
                 <img src="/images/project-1.jpg" alt="Modern Residential Roof" className="project-image" />
-                <div className="project-overlay">View Project</div>
               </div>
               <div className="project-details">
                 <h3 className="project-title">Ceiling & Roofing Project Installation</h3>
@@ -359,7 +439,6 @@ function App() {
             <div className="project-card">
               <div className="project-image-wrapper">
                 <img src="/images/project-2.jpg" alt="Commercial Building Roof" className="project-image" />
-                <div className="project-overlay">View Project</div>
               </div>
               <div className="project-details">
                 <h3 className="project-title">Ceiling & PVC Panel Project </h3>
@@ -374,7 +453,6 @@ function App() {
             <div className="project-card">
               <div className="project-image-wrapper">
                 <img src="/images/project-3.jpg" alt="Villa Roofing" className="project-image" />
-                <div className="project-overlay">View Project</div>
               </div>
               <div className="project-details">
                 <h3 className="project-title">Re-Roofing of Cogon Grass Project</h3>
@@ -389,7 +467,6 @@ function App() {
             <div className="project-card">
               <div className="project-image-wrapper">
                 <img src="/images/project-4.jpg" alt="Emergency Repair" className="project-image" />
-                <div className="project-overlay">View Project</div>
               </div>
               <div className="project-details">
                 <h3 className="project-title">Ceiling & Spandrel Roofing Project</h3>
@@ -404,7 +481,6 @@ function App() {
             <div className="project-card">
               <div className="project-image-wrapper">
                 <img src="/images/project-5.jpg" alt="Heritage Home" className="project-image" />
-                <div className="project-overlay">View Project</div>
               </div>
               <div className="project-details">
                 <h3 className="project-title">PVC Panel Ceiling Project</h3>
@@ -419,7 +495,6 @@ function App() {
             <div className="project-card">
               <div className="project-image-wrapper">
                 <img src="/images/project-6.jpg" alt="Beachfront Property" className="project-image" />
-                <div className="project-overlay">View Project</div>
               </div>
               <div className="project-details">
                 <h3 className="project-title">Spandrel Project Installation</h3>
@@ -434,7 +509,6 @@ function App() {
             <div className="project-card">
               <div className="project-image-wrapper">
                 <img src="/images/project-7.jpg" alt="Multi-Story Building" className="project-image" />
-                <div className="project-overlay">View Project</div>
               </div>
               <div className="project-details">
                 <h3 className="project-title">Re-Roofing of Restaurant Project</h3>
@@ -449,7 +523,6 @@ function App() {
             <div className="project-card">
               <div className="project-image-wrapper">
                 <img src="/images/project-8.jpg" alt="School Building" className="project-image" />
-                <div className="project-overlay">View Project</div>
               </div>
               <div className="project-details">
                 <h3 className="project-title">Trusses Roofing and Spandrel Project</h3>
@@ -464,7 +537,6 @@ function App() {
             <div className="project-card">
               <div className="project-image-wrapper">
                 <img src="/images/project-9.jpg" alt="Restaurant Roof" className="project-image" />
-                <div className="project-overlay">View Project</div>
               </div>
               <div className="project-details">
                 <h3 className="project-title">Roofing Project</h3>
@@ -479,7 +551,6 @@ function App() {
             <div className="project-card">
               <div className="project-image-wrapper">
                 <img src="/images/project-10.jpg" alt="Church Roof" className="project-image" />
-                <div className="project-overlay">View Project</div>
               </div>
               <div className="project-details">
                 <h3 className="project-title">Roofing Project</h3>
@@ -494,7 +565,6 @@ function App() {
             <div className="project-card">
               <div className="project-image-wrapper">
                 <img src="/images/project-11.jfif" alt="Warehouse Roofing" className="project-image" />
-                <div className="project-overlay">View Project</div>
               </div>
               <div className="project-details">
                 <h3 className="project-title">Stainless Gutter Installation & Roofing Project</h3>
@@ -509,7 +579,6 @@ function App() {
             <div className="project-card">
               <div className="project-image-wrapper">
                 <img src="/images/project-12.jfif" alt="Eco-Friendly Roof" className="project-image" />
-                <div className="project-overlay">View Project</div>
               </div>
               <div className="project-details">
                 <h3 className="project-title">Trusses Roofing Project</h3>
@@ -642,6 +711,103 @@ function App() {
             </div>
           </div>
         </section>
+
+        {/* --- Footer Section --- */}
+        <footer className="footer">
+          <div className="footer-container">
+            <div className="footer-grid">
+              {/* Company Info */}
+              <div className="footer-column">
+                <div className="footer-logo-section">
+                  <img src={logo} alt="Golden Castle Roofing Logo" className="footer-logo" />
+                  <h3 className="footer-brand">GOLDEN CASTLE<br />ROOFING BUILDERS</h3>
+                </div>
+                <p className="footer-tagline">Building strong roofs since 2013. Quality craftsmanship, lasting protection.</p>
+                <div className="footer-social">
+                  <a href="https://www.facebook.com/profile.php?id=100054211884515" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Facebook">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                  </a>
+                  <a href="mailto:goldencastleroofingbuilders@gmail.com" className="social-link" aria-label="Email">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                  </a>
+                  <a href="tel:09177052591" className="social-link" aria-label="Phone">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Quick Links */}
+              <div className="footer-column">
+                <h4 className="footer-heading">Quick Links</h4>
+                <ul className="footer-links">
+                  <li><a onClick={() => scrollToSection('hero')}>Home</a></li>
+                  <li><a onClick={() => scrollToSection('services')}>Services</a></li>
+                  <li><a onClick={() => scrollToSection('projects')}>Our Work</a></li>
+                  <li><a onClick={() => scrollToSection('consultation')}>Get a Quote</a></li>
+                  <li><a href="#terms">Terms & Conditions</a></li>
+                  <li><a href="#privacy">Privacy Policy</a></li>
+                </ul>
+              </div>
+
+              {/* Services */}
+              <div className="footer-column">
+                <h4 className="footer-heading">Our Services</h4>
+                <ul className="footer-links">
+                  <li>Roof Installation</li>
+                  <li>Roof Repair</li>
+                  <li>Emergency Leak Repair</li>
+                  <li>Ceiling Installation</li>
+                  <li>PVC Panel Installation</li>
+                  <li>Spandrel Roofing</li>
+                </ul>
+              </div>
+
+              {/* Contact Info */}
+              <div className="footer-column">
+                <h4 className="footer-heading">Contact Us</h4>
+                <ul className="footer-contact">
+                  <li className="contact-item-footer">
+                    <span className="contact-icon-footer">📍</span>
+                    <span>J.A Clarin Corner Marapao St.<br />Tagbilaran City, Bohol</span>
+                  </li>
+                  <li className="contact-item-footer">
+                    <span className="contact-icon-footer">📞</span>
+                    <span>09177052591<br />09995818673</span>
+                  </li>
+                  <li className="contact-item-footer">
+                    <span className="contact-icon-footer">✉️</span>
+                    <span>goldencastleroofingbuilders@gmail.com</span>
+                  </li>
+                  <li className="contact-item-footer">
+                    <span className="contact-icon-footer">🕒</span>
+                    <span>Mon - Sat: 8:00 AM - 5:00 PM</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Footer Bottom */}
+            <div className="footer-bottom">
+              <div className="footer-divider"></div>
+              <div className="footer-bottom-content">
+                <p className="footer-copyright">
+                  © {new Date().getFullYear()} Golden Castle Roofing Builders. Established 2013. All rights reserved.
+                </p>
+                <div className="footer-legal">
+                  <a href="#terms">Terms of Service</a>
+                  <span className="footer-separator">|</span>
+                  <a href="#privacy">Privacy Policy</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
       </main>
     </div>
   );
