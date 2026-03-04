@@ -37,18 +37,29 @@ A modern, responsive web application for Golden Castle Roofing Builders, a premi
 ✨ Features
 
 🎨 Modern Design
+
 Fully responsive design optimized for mobile, tablet, and desktop
+
 Professional gold and dark color scheme reflecting brand identity
+
 Smooth animations and transitions for enhanced user experience
+
 Custom hero section with dynamic branding
 
 🛠️ Core Functionality
-12 Service Cards - Detailed showcase of roofing and construction services
-Project Gallery - Portfolio of completed projects with descriptions
-Team Showcase - Meet the leadership and team members
-Contact Form - EmailJS integration for instant consultation requests
-Messenger Integration - Direct messaging via Facebook Messenger
-Emergency Services - Quick-access emergency contact button
+
+12 Service Cards 
+- Detailed showcase of roofing and construction services
+Project Gallery
+- Portfolio of completed projects with descriptions
+Team Showcase
+- Meet the leadership and team members
+Contact Form
+- EmailJS integration for instant consultation requests
+Messenger Integration
+- Direct messaging via Facebook Messenger
+Emergency Services
+- Quick-access emergency contact button
 
 📱 User Experience
 Fast loading times with Vite build optimization
