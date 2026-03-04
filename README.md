@@ -10,17 +10,17 @@ A modern, responsive web application for Golden Castle Roofing Builders, a premi
 <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
 
 📋 Table of Contents
-Features
-Technologies Used
-Getting Started
-Installation
-Configuration
-Deployment
-Project Structure
-Services Offered
-Contributing
-License
-Contact
+-Features
+-Technologies Used
+-Getting Started
+-Installation
+-Configuration
+-Deployment
+-Project Structure
+-Services Offered
+-Contributing
+-License
+-Contact
 
 ✨ Features
 
