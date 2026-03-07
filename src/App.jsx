@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import logo from "./assets/logo.png";
 
@@ -14,6 +14,18 @@ function App() {
   });
   const [formStatus, setFormStatus] = useState({ type: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Track scroll position for navbar styling
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleService = (serviceId) => {
     setExpandedService(expandedService === serviceId ? null : serviceId);
@@ -30,7 +42,12 @@ function App() {
         top: offsetPosition,
         behavior: 'smooth'
       });
+      setIsMobileMenuOpen(false); // Close mobile menu after clicking
     }
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   const handleInputChange = (e) => {
@@ -96,6 +113,49 @@ function App() {
   };
   return (
     <div className="App">
+      {/* --- Top Navbar --- */}
+      <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
+        <div className="navbar-container">
+          {/* Logo and Brand */}
+          <div className="navbar-brand" onClick={() => scrollToSection('hero')}>
+            <img src={logo} alt="Golden Castle Logo" className="navbar-logo" />
+            <div className="navbar-brand-text">
+              <span className="navbar-brand-name">GOLDEN CASTLE</span>
+              <span className="navbar-brand-tagline">ROOFING BUILDERS</span>
+            </div>
+          </div>
+
+          {/* Desktop Navigation Links */}
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <button className="nav-link" onClick={() => scrollToSection('hero')}>Home</button>
+            </li>
+            <li className="nav-item">
+              <button className="nav-link" onClick={() => scrollToSection('services')}>Services</button>
+            </li>
+            <li className="nav-item">
+              <button className="nav-link" onClick={() => scrollToSection('projects')}>Projects</button>
+            </li>
+            <li className="nav-item">
+              <button className="nav-link nav-link-cta" onClick={() => scrollToSection('consultation')}>Get Quote</button>
+            </li>
+          </ul>
+
+          {/* Mobile Menu Button */}
+          <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
+            <span className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}></span>
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+          <button className="mobile-nav-link" onClick={() => scrollToSection('hero')}>Home</button>
+          <button className="mobile-nav-link" onClick={() => scrollToSection('services')}>Services</button>
+          <button className="mobile-nav-link" onClick={() => scrollToSection('projects')}>Projects</button>
+          <button className="mobile-nav-link mobile-nav-link-cta" onClick={() => scrollToSection('consultation')}>Get Quote</button>
+        </div>
+      </nav>
+
       <main>
         {/* --- Hero Section --- */}
         <section id="hero" className="hero-section">
